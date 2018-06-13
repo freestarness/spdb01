@@ -35,10 +35,5 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
                 .addResourceLocations("classpath:/static/")
                 .resourceChain(true)
                 .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
-        registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/")
-                .resourceChain(false)
-                .addResolver(new WebJarsResourceResolver())
-                .addResolver(new PathResourceResolver());
     }
-
 }

@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.logictech</groupId>
-    <artifactId>best</artifactId>
+    <artifactId>spdb-back</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>spring-boot-mybatis-annotation</name>
+    <name>axb-back</name>
     <description>Demo project for Spring Boot and mybatis</description>
 
     <parent>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.4.1.Final</version>
+            <version>5.4.1.Final</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
         <!--  end of validate hibernate -->
         <!-- log related -->
@@ -72,12 +72,16 @@
             <artifactId>nekohtml</artifactId>
         </dependency>
         <!-- end of druid thymeleaf -->
-
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
         <!-- Mybatis 插件 -->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>RELEASE</version>
+            <version>1.1.7</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -128,53 +132,55 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!--  静态资源 -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.9.1</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>github-com-vuetifyjs-vuetify</artifactId>
-            <version>0.15.7</version>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+        <!-- JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.1.0</version>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>animate.css</artifactId>
-            <version>3.5.2</version>
+            <groupId>feilong-platform</groupId>
+            <artifactId>feilong-core</artifactId>
+            <version>1.9.6</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>vue</artifactId>
-            <version>2.5.2</version>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.6</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>2.1.4</version>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.14</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>axios</artifactId>
-            <version>0.17.0</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>nprogress</artifactId>
-            <version>0.2.0</version>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
         </dependency>
-        <!-- end of 静态资源 -->
     </dependencies>
     <build>
+        <finalName>spdb</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
