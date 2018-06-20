@@ -13,7 +13,7 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_user" property="createUser" jdbcType="VARCHAR" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_user" property="updateUser" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     <!--
@@ -50,7 +50,7 @@
       update_time, update_user)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR}, 
       #{deleted,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=TIMESTAMP})
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.logictech.entity.dto.UserInfo" >
     <!--
@@ -107,7 +107,7 @@
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateUser != null" >
-        #{updateUser,jdbcType=TIMESTAMP},
+        #{updateUser,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -137,7 +137,7 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateUser != null" >
-        update_user = #{updateUser,jdbcType=TIMESTAMP},
+        update_user = #{updateUser,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -154,7 +154,7 @@
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_user = #{createUser,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      update_user = #{updateUser,jdbcType=TIMESTAMP}
+      update_user = #{updateUser,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByUserInfo" resultMap="BaseResultMap" parameterType="com.logictech.entity.dto.UserInfo" >

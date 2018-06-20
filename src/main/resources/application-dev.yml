@@ -67,3 +67,6 @@ spring:
 mapper:
   mappers:
     com.logictech.config.CommonMapperConfig
+app:
+  aes-key-path: E:/key.txt
+  app.aes-iv-path: E:/iv.txt

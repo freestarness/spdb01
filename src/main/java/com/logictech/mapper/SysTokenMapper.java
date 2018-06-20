@@ -1,6 +1,7 @@
 package com.logictech.mapper;
 
 import com.logictech.entity.dto.SysToken;
+import org.apache.ibatis.annotations.Param;
 
 public interface SysTokenMapper {
     /**
@@ -50,4 +51,17 @@ public interface SysTokenMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(SysToken record);
+
+    /**
+     * 检查Token
+     *
+     * @param id id
+     */
+    String checkToken(@Param("id") Integer id, @Param("accessToken")String accessToken);
+    /**
+     * 更新Token
+     * @param record
+     * @return
+     */
+    int updateByUserId(SysToken record);
 }
