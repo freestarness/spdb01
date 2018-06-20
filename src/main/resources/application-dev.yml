@@ -11,6 +11,7 @@ server:
 # 下划线转驼峰
 #========================
 mybatis:
+  mapperLocations: classpath:sqlmap/*.xml
   type-aliases-package: com.logictech.entity.dto, com.logictech.entity.vo
   configuration.map-underscore-to-camel-case: true
 #=======================
@@ -21,7 +22,7 @@ mybatis:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://121.40.169.50:3306/spdb?autoReconnect=true&useUnicode=true&characterEncoding=utf-8\
+    url: jdbc:mysql://121.40.169.50:3306/spdb?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: k
     password: cmb_02_2016
     #=======================

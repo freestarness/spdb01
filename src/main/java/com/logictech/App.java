@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
 
@@ -15,6 +16,7 @@ import org.springframework.core.env.Environment;
  * @since 2017/11/9 上午9:28
  */
 @SpringBootApplication
+@ComponentScan(basePackages = "com.logictech")
 @MapperScan("com.logictech.mapper")
 public class App {
 

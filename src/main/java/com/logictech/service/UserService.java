@@ -1,22 +1,14 @@
 package com.logictech.service;
 
-import com.logictech.entity.dto.UserDTO;
+import com.logictech.entity.dto.UserInfo;
 
-import java.util.List;
 
 /**
- * @author JG.Hannibal
- * @since 2017/11/11 下午12:00
+ * @author John Doe
+ * @since 2018/06/20
  */
 public interface UserService {
 
-    List<UserDTO> listUser() throws Exception;
 
-    Integer addUser(UserDTO userDTO) throws Exception;
-
-    Integer updateUser(UserDTO userDTO) throws Exception;
-
-    Integer removeUser(Integer id) throws Exception;
-
-    void transactionalUser () throws Exception;
+    boolean  checkAdminUser(UserInfo userInfo);
 }

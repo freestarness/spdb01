@@ -50,4 +50,8 @@ public interface CustomerInfoMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(CustomerInfo record);
+    /**
+     * 根据客户code查询
+     */
+    CustomerInfo selectByCustomerCode(String  customerCode);
 }

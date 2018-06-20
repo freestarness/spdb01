@@ -50,4 +50,8 @@ public interface UserInfoMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(UserInfo record);
+    /**
+     * 查询用户信息
+     */
+    UserInfo selectByUserInfo(UserInfo userInfo);
 }
