@@ -7,6 +7,7 @@ import com.logictech.mapper.SysTokenMapper;
 import com.logictech.mapper.UserInfoMapper;
 import com.logictech.service.UserService;
 import com.logictech.utils.DateUtils;
+import com.logictech.utils.MD5Util;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Map<String,Object> checkAdminUser(UserInfo userInfo) {
+        userInfo.setLoginPassword(MD5Util.toMD5(userInfo.getLoginPassword()));
         UserInfo returnUserInfo = userInfoMapper.selectByUserInfo(userInfo);
         if(null == returnUserInfo){
             throw new AppException(get("EM0002"));
