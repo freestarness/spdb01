@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.logictech.config.MessageConfig.get;
 
@@ -36,7 +38,7 @@ public class UserServiceImpl implements UserService {
     private SysTokenMapper sysTokenMapper;
 
     @Override
-    public boolean checkAdminUser(UserInfo userInfo) {
+    public Map<String,Object> checkAdminUser(UserInfo userInfo) {
         UserInfo returnUserInfo = userInfoMapper.selectByUserInfo(userInfo);
         if(null == returnUserInfo){
             throw new AppException(get("EM0002"));
@@ -65,8 +67,17 @@ public class UserServiceImpl implements UserService {
                 sysToken.setUserId(returnUserInfo.getId());
                 sysTokenMapper.updateByUserId(sysToken);
             }
+            Map<String,Object> result = new HashMap<String, Object>();
+            result.put("userId", returnUserInfo.getId());
+            result.put("token", compactJws);
+            result.put("tokenExpired", tokenExpired.getTime());
+            return result;
         }
-        return true;
+    }
+
+    @Override
+    public UserInfo getUserInfo(Integer id) {
+        return userInfoMapper.selectByPrimaryKey(id);
     }
 }
     

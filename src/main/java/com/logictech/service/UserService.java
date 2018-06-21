@@ -2,6 +2,8 @@ package com.logictech.service;
 
 import com.logictech.entity.dto.UserInfo;
 
+import java.util.Map;
+
 
 /**
  * @author John Doe
@@ -10,5 +12,7 @@ import com.logictech.entity.dto.UserInfo;
 public interface UserService {
 
 
-    boolean  checkAdminUser(UserInfo userInfo);
+    Map<String,Object> checkAdminUser(UserInfo userInfo);
+
+    UserInfo getUserInfo(Integer id);
 }

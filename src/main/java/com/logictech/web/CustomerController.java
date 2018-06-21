@@ -1,11 +1,16 @@
 package com.logictech.web;
 
 import com.logictech.entity.dto.CustomerInfo;
+import com.logictech.entity.dto.UserInfo;
+import com.logictech.security.Authorization;
+import com.logictech.security.CurrentUser;
 import com.logictech.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static com.logictech.App.logger;
 /**
@@ -31,5 +36,20 @@ public class CustomerController {
     public CustomerInfo getCustomer(String customerCode) throws Exception {
         logger.info("获得企业客户信息列表");
         return customerService.getCustomer(customerCode);
+    }
+
+
+    /**
+     * 获取录入公司信息列表
+     * @param customerCode
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/listCustomer")
+    @ResponseBody
+    @Authorization
+    public List<CustomerInfo> listCustomer(@CurrentUser UserInfo userInfo, String customerCode) throws Exception {
+        logger.info("获得企业客户信息列表");
+        return customerService.listCustomer(customerCode,userInfo);
     }
 }

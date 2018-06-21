@@ -1,6 +1,9 @@
 package com.logictech.service;
 
 import com.logictech.entity.dto.CustomerInfo;
+import com.logictech.entity.dto.UserInfo;
+
+import java.util.List;
 
 /**
  * @author John Doe
@@ -9,4 +12,6 @@ import com.logictech.entity.dto.CustomerInfo;
 public interface CustomerService {
 
     CustomerInfo getCustomer(String customerCode) throws Exception;
+
+    List<CustomerInfo> listCustomer(String customerCode,UserInfo userInfo);
 }

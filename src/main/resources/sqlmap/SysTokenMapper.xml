@@ -171,7 +171,7 @@
       update_user = #{updateUser,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="checkToken" parameterType="com.logictech.entity.po.SysToken" resultType="java.lang.String">
+  <select id="checkToken" parameterType="com.logictech.entity.dto.SysToken" resultType="java.lang.String">
     select access_token
     from sys_token
     <where>
@@ -179,7 +179,7 @@
       <if test="accessToken !=null and accessToken!=''"> and access_token = #{accessToken}</if>
     </where>
   </select>
-  <update id="updateByUserId" parameterType="com.logictech.entity.po.SysToken">
+  <update id="updateByUserId" parameterType="com.logictech.entity.dto.SysToken">
     update sys_token
     <set >
       <if test="accessToken != null" >

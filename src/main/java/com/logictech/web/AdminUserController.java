@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 import static com.logictech.App.logger;
 
 /**
@@ -29,7 +31,7 @@ public class AdminUserController {
      */
     @RequestMapping("/login")
     @ResponseBody
-    public boolean login(UserInfo userInfo) throws Exception {
+    public Map<String,Object> login(UserInfo userInfo) throws Exception {
         logger.info("获得企业客户信息列表");
         return userService.checkAdminUser(userInfo);
     }
