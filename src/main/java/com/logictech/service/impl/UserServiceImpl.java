@@ -57,6 +57,11 @@ public class UserServiceImpl implements UserService {
                 sysToken.setUserId(returnUserInfo.getId());
                 sysToken.setAccessToken(compactJws);
                 sysToken.setExpiration(tokenExpired.getTime());
+                sysToken.setDeleted("0");
+                sysToken.setCreateUser(returnUserInfo.getUserName());
+                sysToken.setCreateTime(new Date());
+                sysToken.setUpdateUser(returnUserInfo.getUserName());
+                sysToken.setUpdateTime(new Date());
                 //生成token
                 sysTokenMapper.insert(sysToken);
             }else{
@@ -65,6 +70,8 @@ public class UserServiceImpl implements UserService {
                 sysToken.setExpiration(tokenExpired.getTime());
                 sysToken.setAccessToken(compactJws);
                 sysToken.setUserId(returnUserInfo.getId());
+                sysToken.setUpdateUser(returnUserInfo.getUserName());
+                sysToken.setUpdateTime(new Date());
                 sysTokenMapper.updateByUserId(sysToken);
             }
             Map<String,Object> result = new HashMap<String, Object>();

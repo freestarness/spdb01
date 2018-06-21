@@ -1,5 +1,6 @@
 package com.logictech.config;
 
+import com.logictech.entity.so.AppException;
 import com.logictech.entity.so.ParamValidException;
 import com.logictech.entity.so.ResultEntity;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -83,6 +84,10 @@ public class GlobalExceptionConfig {
         logger.error(ex.getMessage(), ex);
         return new ResultEntity(ex);
     }
-
+    @ExceptionHandler(AppException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ResultEntity appThrowableException(AppException ex) throws Exception {
+        return new ResultEntity(ex);
+    }
 }
     

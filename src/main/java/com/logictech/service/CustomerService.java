@@ -14,4 +14,6 @@ public interface CustomerService {
     CustomerInfo getCustomer(String customerCode) throws Exception;
 
     List<CustomerInfo> listCustomer(String customerCode,UserInfo userInfo);
+
+    boolean addCustomer(CustomerInfo customerInfo, UserInfo userInfo);
 }

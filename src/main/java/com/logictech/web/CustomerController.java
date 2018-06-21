@@ -52,4 +52,18 @@ public class CustomerController {
         logger.info("获得企业客户信息列表");
         return customerService.listCustomer(customerCode,userInfo);
     }
+
+    /**
+     * 添加公司信息
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/addCustomer")
+    @ResponseBody
+    @Authorization
+    public boolean addCustomer(@CurrentUser UserInfo userInfo, CustomerInfo customerInfo) throws Exception {
+        logger.info("添加企业客户信息列表");
+        return customerService.addCustomer(customerInfo,userInfo);
+    }
+
 }

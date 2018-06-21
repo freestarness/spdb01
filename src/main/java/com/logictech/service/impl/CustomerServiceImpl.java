@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
+
+import static com.logictech.config.MessageConfig.get;
 
 /**
  * @author John Doe
@@ -32,6 +35,20 @@ public class CustomerServiceImpl implements CustomerService {
         customerInfo.setCustomerCode(customerCode);
         customerInfo.setLogId(userInfo.getId());
         return customerInfoMapper.listByCustomerCode(customerInfo);
+    }
+
+    @Override
+    public boolean addCustomer(CustomerInfo customerInfo, UserInfo userInfo) {
+        customerInfo.setLogId(userInfo.getId());
+        customerInfo.setDeleted("0");
+        customerInfo.setCreateTime(new Date());
+        customerInfo.setCreateUser(userInfo.getUserName());
+        customerInfo.setUpdateTime(new Date());
+        customerInfo.setUpdateUser(userInfo.getUserName());
+        if(customerInfoMapper.insert(customerInfo)==0){
+            throw new AppException(get("EM0003"));
+        }
+        return true;
     }
 }
     
