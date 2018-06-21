@@ -202,6 +202,7 @@
   <include refid="Base_Column_List" />
   from customer_info
   where customer_code = #{customerCode,jdbcType=VARCHAR}
+  and deleted = '0'
 </select>
   <select id="listByCustomerCode" resultMap="BaseResultMap" parameterType="com.logictech.entity.dto.CustomerInfo" >
     <!--
@@ -215,6 +216,10 @@
       <if test="customerCode != null" >
         and customer_code = #{customerCode,jdbcType=VARCHAR}
       </if>
+      <if test="customerCode == null" >
+        and status &lt;&gt; '4'
+      </if>
+      and deleted = '0'
     </where>
   </select>
 </mapper>

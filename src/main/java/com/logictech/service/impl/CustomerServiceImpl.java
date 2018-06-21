@@ -30,6 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public CustomerInfo initCustomer(Integer customerId) throws Exception {
+        return customerInfoMapper.selectByPrimaryKey(customerId);
+    }
+
+    @Override
     public List<CustomerInfo> listCustomer(String customerCode,UserInfo userInfo) {
         CustomerInfo customerInfo = new CustomerInfo();
         customerInfo.setCustomerCode(customerCode);
@@ -45,8 +50,30 @@ public class CustomerServiceImpl implements CustomerService {
         customerInfo.setCreateUser(userInfo.getUserName());
         customerInfo.setUpdateTime(new Date());
         customerInfo.setUpdateUser(userInfo.getUserName());
+        if(null==customerInfo.getOpenDate()){
+            customerInfo.setOpenDate(0);
+        }
         if(customerInfoMapper.insert(customerInfo)==0){
             throw new AppException(get("EM0003"));
+        }
+        return true;
+    }
+
+    @Override
+    public boolean modifyCustomer(CustomerInfo customerInfo, UserInfo userInfo) {
+        customerInfo.setUpdateTime(new Date());
+        customerInfo.setUpdateUser(userInfo.getUserName());
+        if(customerInfoMapper.updateByPrimaryKey(customerInfo)==0){
+            throw new AppException(get("EM0004"));
+        }
+        return true;
+    }
+
+    @Override
+    public boolean deleteCustomer(CustomerInfo customerInfo , UserInfo userInfo) {
+        customerInfo.setDeleted("1");
+        if(customerInfoMapper.updateByPrimaryKeySelective(customerInfo)==0){
+            throw new AppException(get("EM0005"));
         }
         return true;
     }
