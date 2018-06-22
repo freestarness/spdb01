@@ -216,6 +216,9 @@
       <if test="customerCode != null" >
         and customer_code = #{customerCode,jdbcType=VARCHAR}
       </if>
+      <if test="logId != null" >
+        and log_id = #{logId,jdbcType=INTEGER}
+      </if>
       <if test="customerCode == null" >
         and status &lt;&gt; '4'
       </if>

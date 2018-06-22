@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
     public boolean modifyCustomer(CustomerInfo customerInfo, UserInfo userInfo) {
         customerInfo.setUpdateTime(new Date());
         customerInfo.setUpdateUser(userInfo.getUserName());
-        if(customerInfoMapper.updateByPrimaryKey(customerInfo)==0){
+        if(customerInfoMapper.updateByPrimaryKeySelective(customerInfo)==0){
             throw new AppException(get("EM0004"));
         }
         return true;
