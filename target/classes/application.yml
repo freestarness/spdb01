@@ -1,0 +1,11 @@
+env: ${spring.profiles.active}
+
+
+#=======================
+# ! Spring
+#-----------------------
+# 环境设置
+#=======================
+spring:
+  profiles:
+    active: dev

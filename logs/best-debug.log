@@ -1,0 +1,60 @@
+2018.06.28 10:28:14 CST DEBUG org.springframework.boot.StartupInfoLogger 51 logStarting - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018.06.28 10:28:56 CST DEBUG org.springframework.boot.StartupInfoLogger 51 logStarting - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, user_name, login_password, deleted, create_time, create_user, update_time, update_user from user_info where user_name = ? and login_password = ? 
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: admin(String), e10adc3949ba59abbe56e057f20f883e(String)
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select access_token from sys_token WHERE user_id = ? 
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: update sys_token SET access_token = ?, expiration = ?, update_time = ?, update_user = ? where user_id = ? 
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String), 1530156649277(Long), 2018-06-28 10:30:49.853(Timestamp), admin(String), 1(Integer)
+2018.06.28 10:30:49 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 1
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select access_token from sys_token WHERE access_token = ? 
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String)
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: update sys_token set access_token = ?, expiration = ?, user_id = ?, deleted = ?, create_time = ?, create_user = ?, update_time = ?, update_user = ? where id = ? 
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String), 1530156651284(Long), 1(Integer), null, null, null, null, null, null
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 0
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, user_name, login_password, deleted, create_time, create_user, update_time, update_user from user_info where id = ? 
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, customer_code, customer_name, status, log_id, open_date, deleted, create_time, create_user, update_time, update_user from customer_info WHERE log_id = ? and status <> '4' and deleted = '0' 
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:30:51 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 5
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select access_token from sys_token WHERE access_token = ? 
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String)
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: update sys_token set access_token = ?, expiration = ?, user_id = ?, deleted = ?, create_time = ?, create_user = ?, update_time = ?, update_user = ? where id = ? 
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String), 1530156655905(Long), 1(Integer), null, null, null, null, null, null
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 0
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, user_name, login_password, deleted, create_time, create_user, update_time, update_user from user_info where id = ? 
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:30:55 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:56 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, customer_code, customer_name, status, log_id, open_date, deleted, create_time, create_user, update_time, update_user from customer_info WHERE customer_code like concat(concat('%',?),'%') and log_id = ? and deleted = '0' 
+2018.06.28 10:30:56 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(String), 1(Integer)
+2018.06.28 10:30:56 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 5
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select access_token from sys_token WHERE access_token = ? 
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String)
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: update sys_token set access_token = ?, expiration = ?, user_id = ?, deleted = ?, create_time = ?, create_user = ?, update_time = ?, update_user = ? where id = ? 
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String), 1530156659415(Long), 1(Integer), null, null, null, null, null, null
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 0
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, user_name, login_password, deleted, create_time, create_user, update_time, update_user from user_info where id = ? 
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, customer_code, customer_name, status, log_id, open_date, deleted, create_time, create_user, update_time, update_user from customer_info WHERE customer_code like concat(concat('%',?),'%') and log_id = ? and deleted = '0' 
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 12(String), 1(Integer)
+2018.06.28 10:30:59 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 4
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select access_token from sys_token WHERE access_token = ? 
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String)
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: update sys_token set access_token = ?, expiration = ?, user_id = ?, deleted = ?, create_time = ?, create_user = ?, update_time = ?, update_user = ? where id = ? 
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTMwMTU2NjQ5fQ.MOaQ5yj8D7SPLBaVFlBSCwJRd2NLdAY9AY2ImytZ-Y2kK63s6zAFl5dHzuPCgk7FVq0v8Ze1IfbKFA_QJ_BixA(String), 1530156665383(Long), 1(Integer), null, null, null, null, null, null
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 0
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, user_name, login_password, deleted, create_time, create_user, update_time, update_user from user_info where id = ? 
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Integer)
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: select id, customer_code, customer_name, status, log_id, open_date, deleted, create_time, create_user, update_time, update_user from customer_info WHERE customer_code like concat(concat('%',?),'%') and log_id = ? and deleted = '0' 
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 232(String), 1(Integer)
+2018.06.28 10:31:05 CST DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+2018.06.28 11:27:27 CST DEBUG org.springframework.boot.StartupInfoLogger 51 logStarting - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE

@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.logictech.config.BizPropConfig",
+      "name": "biz",
+      "type": "com.logictech.config.BizPropConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.logictech.config.BizPropConfig",
+      "name": "biz.message1",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.logictech.config.BizPropConfig",
+      "name": "biz.message2",
+      "type": "java.lang.String"
+    }
+  ]
+}
