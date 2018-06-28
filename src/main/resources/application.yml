@@ -8,4 +8,4 @@ env: ${spring.profiles.active}
 #=======================
 spring:
   profiles:
-    active: dev
+    active: pro
