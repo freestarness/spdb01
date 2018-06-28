@@ -214,7 +214,7 @@
     from customer_info
     <where>
       <if test="customerCode != null" >
-        and customer_code = #{customerCode,jdbcType=VARCHAR}
+        and customer_code like concat(concat('%',#{customerCode,jdbcType=VARCHAR}),'%')
       </if>
       <if test="logId != null" >
         and log_id = #{logId,jdbcType=INTEGER}
